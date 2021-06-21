@@ -1,23 +1,49 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
+const BlankView = {
+  template: "<router-view></router-view>",
+};
+
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: "/distribution",
+    component: BlankView,
+    children: [
+      {
+        path: "/distribution/district",
+        component: () =>
+          import("../views/distribution/DistrictDistribution.vue"),
+      },
+      {
+        path: "/distribution/square",
+        component: () => import("../views/distribution/SquareDistribution.vue"),
+      },
+    ],
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/hotspot",
+    component: BlankView,
+    children: [
+      {
+        path: "/hotspot/yangpu",
+        component: () => import("../views/hotspot/YangpuHotspot.vue"),
+      },
+      {
+        path: "/hotspot/jiading",
+        component: () => import("../views/hotspot/JiadingHotspot.vue"),
+      },
+    ],
+  },
+  {
+    path: "/",
+    redirect: "/distribution/district",
+  },
+  {
+    path: "/index",
+    redirect: "/distribution/district",
   },
 ];
 
