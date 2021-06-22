@@ -41,6 +41,11 @@
 <script>
 const menu = [
   {
+    key: "culture",
+    text: "所有文化产业",
+    link: "/culture",
+  },
+  {
     key: "distribution",
     text: "文化产业分布",
     children: [

@@ -75,3 +75,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#map {
+  width: 100%;
+  height: 25vw;
+}
+</style>

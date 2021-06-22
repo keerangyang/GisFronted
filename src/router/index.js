@@ -9,6 +9,10 @@ const BlankView = {
 
 const routes = [
   {
+    path: "/culture",
+    component: () => import("../views/Culture.vue"),
+  },
+  {
     path: "/distribution",
     component: BlankView,
     children: [
