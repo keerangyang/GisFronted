@@ -8,7 +8,7 @@ import MapView from "@arcgis/core/views/MapView";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import Legend from "@arcgis/core/widgets/Legend";
 import { project, load } from "@arcgis/core/geometry/projection";
-import { promisify } from "../../utils";
+import { gisServicePath, promisify } from "../../utils";
 // import PopupTemplate from "@arcgis/core/PopupTemplate";
 
 export default {
@@ -36,13 +36,13 @@ export default {
     },
     async loadFeatureLayer() {
       this.fishmapLayer = new FeatureLayer({
-        url: "http://localhost:6080/arcgis/rest/services/shanghai/jiading_hotspot/MapServer/0",
+        url: gisServicePath("shanghai/hotspot_jiading/MapServer/0"),
         opacity: 0.6,
         // popupTemplate,
       });
 
       this.hotAreaLayer = new FeatureLayer({
-        url: "http://localhost:6080/arcgis/rest/services/shanghai/jiading_hotspot/MapServer/1",
+        url: gisServicePath("shanghai/hotspot_jiading/MapServer/1"),
         opacity: 0.6,
       });
 

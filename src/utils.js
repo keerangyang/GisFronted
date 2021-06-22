@@ -9,3 +9,6 @@ export const promisify = (obj) => {
     obj.when(resolve).catch(reject);
   });
 };
+
+export const gisServicePath = (path) =>
+  `http://${process.env.VUE_APP_GIS_SERVER_IP}:${process.env.VUE_APP_GIS_SERVER_PORT}/arcgis/rest/services/${path}`;

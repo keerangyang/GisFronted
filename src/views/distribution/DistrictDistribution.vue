@@ -8,7 +8,7 @@ import MapView from "@arcgis/core/views/MapView";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import Legend from "@arcgis/core/widgets/Legend";
 import { project, load } from "@arcgis/core/geometry/projection";
-import { promisify } from "../../utils";
+import { gisServicePath, promisify } from "../../utils";
 import PopupTemplate from "@arcgis/core/PopupTemplate";
 
 const popupTemplate = new PopupTemplate({
@@ -82,7 +82,7 @@ export default {
     },
     async loadFeatureLayer() {
       this.featureLayer = new FeatureLayer({
-        url: "http://localhost:6080/arcgis/rest/services/shanghai/distribution_district/MapServer/1",
+        url: gisServicePath("shanghai/distribution_district/MapServer/1"),
         outFields: ["*"],
         popupTemplate,
       });
