@@ -37,22 +37,6 @@ const popupTemplate = new PopupTemplate({
             places: 3,
           },
         },
-        {
-          fieldName: "B12001_calc_numNeverE",
-          label: "People that Never Married",
-          format: {
-            digitSeparator: true,
-            places: 0,
-          },
-        },
-        {
-          fieldName: "B12001_calc_numDivorcedE",
-          label: "People Divorced",
-          format: {
-            digitSeparator: true,
-            places: 0,
-          },
-        },
       ],
     },
   ],

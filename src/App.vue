@@ -3,7 +3,7 @@
     <a-layout-sider>
       <a-menu
         :default-selected-keys="['district']"
-        :default-open-keys="['distribution']"
+        v-model="selectedKeys"
         theme="dark"
         mode="inline"
       >
@@ -77,7 +77,13 @@ const menu = [
 export default {
   data: () => ({
     menu,
+    selectedKeys: ["district"],
   }),
+  mounted() {
+    console.log("mouted");
+    const pathArr = this.$route.path.split("/");
+    this.selectedKeys = [pathArr[pathArr.length - 1]];
+  },
 };
 </script>
 
