@@ -38,7 +38,6 @@ export default {
       this.fishmapLayer = new FeatureLayer({
         url: gisServicePath("shanghai/hotspot_jiading/MapServer/0"),
         opacity: 0.6,
-        // popupTemplate,
       });
 
       this.hotAreaLayer = new FeatureLayer({

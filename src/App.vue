@@ -54,6 +54,11 @@ const menu = [
         text: "人命广场分布",
         link: "/distribution/square",
       },
+      {
+        key: "circle",
+        text: "环线分布",
+        link: "/distribution/circle",
+      },
     ],
   },
   {

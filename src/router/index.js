@@ -21,6 +21,10 @@ const routes = [
         path: "/distribution/square",
         component: () => import("../views/distribution/SquareDistribution.vue"),
       },
+      {
+        path: "/distribution/circle",
+        component: () => import("../views/distribution/CircleDistribution.vue"),
+      },
     ],
   },
   {

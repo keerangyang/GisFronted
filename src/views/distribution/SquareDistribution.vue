@@ -59,7 +59,7 @@ export default {
   methods: {
     loadMap() {
       this.map = new Map({
-        basemap: "oceans",
+        basemap: "gray",
         ground: "world-elevation",
       });
 

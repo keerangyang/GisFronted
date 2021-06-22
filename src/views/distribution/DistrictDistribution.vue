@@ -4,7 +4,7 @@
 
 <script>
 import Map from "@arcgis/core/Map";
-import MapView from "@arcgis/core/views/MapView";
+import SceneView from "@arcgis/core/views/SceneView";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import Legend from "@arcgis/core/widgets/Legend";
 import { project, load } from "@arcgis/core/geometry/projection";
@@ -55,11 +55,14 @@ export default {
         ground: "world-elevation",
       });
 
-      this.view = new MapView({
+      this.view = new SceneView({
         container: "map",
         map: this.map,
-        center: [121.1253, 31.1731],
-        zoom: 10,
+        camera: {
+          position: [121.1253, 31.1731, 707],
+          tilt: 40,
+          heading: 50,
+        },
       });
 
       this.loadFeatureLayer();
