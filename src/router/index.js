@@ -46,6 +46,30 @@ const routes = [
     ],
   },
   {
+    path: "/industryplan",
+    component:BlankView,
+    children:[
+      {
+        path:"/industryplan/industry",
+        component:()=>import("../views/industryplan/industry.vue"),
+      }
+    ],
+  },
+  {
+    path:"/trafficpressure",
+    component:BlankView,
+    children:[
+      {
+        path:"/trafficpressure/highway",
+        component:()=>import("../views/trafficpressure/highway.vue")
+      },
+      {
+        path:"/trafficpressure/subway",
+        component:()=>import("../views/trafficpressure/subway.vue")
+      }
+    ]
+  },
+  {
     path: "/",
     redirect: "/distribution/district",
   },

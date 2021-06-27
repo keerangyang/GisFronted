@@ -82,6 +82,33 @@ const menu = [
       },
     ],
   },
+  {
+    key:"trafficpressure",
+    text:"交通压力",
+    children:[
+      {
+        key:"subway",
+        text:"地铁压力分析",
+        link:"/trafficpressure/subway",
+      },
+      {
+        key:"highway",
+        text:"公路压力分析",
+        link:"/trafficpressure/highway",
+      }
+    ],
+  },
+  {
+    key:"industryplan",
+    text:"产业重新规划",
+    children:[
+      {
+        key:"industry",
+        text:"产业规划",
+        link:"/industryplan/industry"
+      }
+    ]
+  }
 ];
 
 export default {
